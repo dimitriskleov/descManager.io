@@ -13,26 +13,25 @@
             font-family: Arial, sans-serif;
             text-align: center;
             overflow: hidden; /* Prevents scrollbars from appearing */
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
         }
 
         .title {
             font-size: 3em;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            margin: 0;
         }
 
         .manager-title {
             font-size: 1.5em;
             color: lightblue;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            position: absolute;
-            top: 100px;
-            left: 50%;
-            transform: translateX(-50%);
+            margin: 10px 0;
         }
 
         .button {
@@ -45,11 +44,8 @@
             border-radius: 5px;
             text-decoration: none;
             box-shadow: 0 0 10px rgba(173, 216, 230, 0.7); /* Light neon blue glow */
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            transform: translateY(0);
             transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+            margin-top: 20px;
         }
 
         .button:hover {
@@ -58,24 +54,30 @@
         }
 
         .image-container {
-            position: relative;
-            width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
+            z-index: -1; /* Ensures image stays in the background */
         }
 
         .image {
             width: 100%;
             height: 100%;
             object-fit: cover; /* Ensures the image covers the container */
+            filter: brightness(50%); /* Darkens image for better text visibility */
         }
     </style>
 </head>
 <body>
-    <h1 class="title">Desc</h1>
-    <h2 class="manager-title">Manager</h2>
     <div class="image-container">
         <img src="https://via.placeholder.com/1920x1080" alt="Sample Image" class="image">
+    </div>
+    <div>
+        <h1 class="title">Desc</h1>
+        <h2 class="manager-title">Manager</h2>
         <a href="https://example.com" class="button">Download</a>
     </div>
 </body>
