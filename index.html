@@ -1,55 +1,70 @@
-# Background & Layout
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Effect Layout</title>
+    <title>Styled Layout</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
             background-color: black;
             color: white;
-            text-align: center;
             font-family: Arial, sans-serif;
+            text-align: center;
         }
-        .desc {
-            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
-            font-size: 2em;
+
+        .title {
+            font-size: 3em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-        .manager {
+
+        .manager-title {
             color: lightblue;
-            text-shadow: 2px 2px 5px rgba(0, 255, 255, 0.7);
-            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-        .download-button {
+
+        .button {
             background-color: lightblue;
-            border: none;
             color: black;
+            border: none;
             padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
             font-size: 1em;
-            margin: 4px 2px;
             cursor: pointer;
-            box-shadow: 0 0 10px rgba(173, 216, 230, 0.5);
+            border-radius: 5px;
+            text-decoration: none;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            box-shadow: 0 0 10px rgba(173, 216, 230, 0.7); /* Light neon blue glow */
         }
-        .image-container {
-            text-align: center;
+
+        .button:hover {
+            background-color: deepskyblue;
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Brighter glow on hover */
+        }
+
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .image {
+            margin: 20px;
         }
     </style>
 </head>
 <body>
-
-    <div class="desc">Desc</div>
-    <div class="manager">Manager</div>
-    
-    <div class="image-container">
-        <img src="Image URL" alt="Centered Image">
+    <div class="content-area">
+        <h1 class="title">Desc</h1>
+        <h2 class="manager-title">Manager</h2>
+        <a href="https://example.com" class="button">Download</a>
+        <img src="https://via.placeholder.com/800x400" alt="Sample Image" class="image">
     </div>
-    
-    <a href="https://example.com" class="download-button">Download</a>
-
 </body>
 </html>
