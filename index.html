@@ -25,20 +25,20 @@
             color: #fff;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
             margin: 20px 0; /* Margin for spacing */
+            line-height: 1.2;
         }
 
-        .manager-title {
-            font-size: 1.5rem;
+        .title .manager-title {
             color: #87CEFA; /* LightSkyBlue */
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-            margin: 10px 0; /* Margin for spacing */
+            font-size: 1.5rem; /* Slightly smaller size for the manager title */
+            margin: 5px 0 0 0; /* Top margin to separate from "Desc" */
         }
 
         .container {
             position: relative;
             width: 500px; /* Fixed width for the image */
             height: 400px; /* Fixed height for the image */
-            margin: 20px 0; /* Margin to separate from the titles */
+            margin: 20px 0; /* Margin to separate from the title */
         }
 
         .image {
@@ -70,8 +70,10 @@
 </head>
 <body>
     <div>
-        <h1 class="title">Desc</h1>
-        <h2 class="manager-title">Manager</h2>
+        <h1 class="title">
+            Desc
+            <span class="manager-title">Manager</span>
+        </h1>
         <div class="container">
             <img src="https://cdn.discordapp.com/attachments/1187112420951461930/1280233385360494602/Screenshot_2024-09-02_212928.png?ex=66d755c0&is=66d60440&hm=ed6a55440258776493388d9af32ace648974f2852bfa5a5168467e0a14c193e5&" alt="Sample Image" class="image">
         </div>
