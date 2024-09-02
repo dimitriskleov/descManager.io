@@ -5,64 +5,46 @@
 }
 
 body {
+    background-color: black;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #007BFF;
     color: white;
-    padding: 10px 0;
-}
-
-header h1 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-header nav ul {
     display: flex;
     justify-content: center;
-    list-style: none;
-}
-
-header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.manager-section {
-    background-color: #007BFF;
-    color: white;
-    padding: 30px 0;
-}
-
-.desc-section {
-    background-color: white;
-    color: black;
-    padding: 30px 0;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
     text-align: center;
 }
 
-footer {
-    background-color: #333;
+h1 {
+    font-size: 2.5rem;
     color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+h1 .highlight {
+    color: #00a2ff; /* Blue color for 'Manager' */
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #00a2ff; /* Blue color for links */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    text-decoration: underline;
 }
