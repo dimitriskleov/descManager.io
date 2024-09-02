@@ -34,10 +34,11 @@
             cursor: pointer;
             border-radius: 5px;
             text-decoration: none;
-            position: absolute;
-            right: 20px;
-            top: 20px;
             box-shadow: 0 0 10px rgba(173, 216, 230, 0.7); /* Light neon blue glow */
+            position: absolute;
+            top: 50%;
+            right: -130px; /* Adjust this value based on the button size and image width */
+            transform: translateY(-50%);
         }
 
         .button:hover {
@@ -54,6 +55,11 @@
             position: relative;
         }
 
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
         .image {
             margin: 20px;
         }
@@ -63,8 +69,10 @@
     <div class="content-area">
         <h1 class="title">Desc</h1>
         <h2 class="manager-title">Manager</h2>
-        <a href="https://example.com" class="button">Download</a>
-        <img src="https://via.placeholder.com/800x400" alt="Sample Image" class="image">
+        <div class="image-container">
+            <img src="https://via.placeholder.com/800x400" alt="Sample Image" class="image">
+            <a href="https://example.com" class="button">Download</a>
+        </div>
     </div>
 </body>
 </html>
