@@ -3,41 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desc Manager</title>
+    <title>Description Manager</title>
     <style>
         body {
-            background-color: #333;
-            color: #fff;
+            background-color: black;
+            color: white;
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        nav {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-        nav a:hover {
-            text-decoration: underline;
         }
         h1 {
-            font-size: 3em;
+            color: white;
+            text-shadow: 2px 2px 5px gray;
+        }
+        .manager-desc {
+            color: blue;
+            font-size: 20px;
+        }
+        .button {
+            background-color: lightblue;
+            border: none;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .download-btn {
+            background-color: darkblue;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#">Home</a>
-    </nav>
-    <h1>Desc Manager</h1>
+    <h1>Description Manager</h1>
+    <p class="manager-desc">This is the manager description in blue.</p>
+    <img src="https://via.placeholder.com/700" alt="Sample Image" width="700" height="700">
+    <br>
+    <a href="https://google.com" class="button">Visit Google</a>
+    <a href="#" class="button download-btn">Download</a>
 </body>
 </html>
