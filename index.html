@@ -8,30 +8,38 @@
         body {
             background-color: black;
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Verdana', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
         h1 {
             color: white;
-            text-shadow: 2px 2px 5px gray;
+            text-shadow: 3px 3px 6px gray;
         }
         .manager-desc {
             color: blue;
-            font-size: 20px;
+            font-size: 22px;
+            margin-bottom: 20px;
         }
         .button {
             background-color: lightblue;
             border: none;
             color: black;
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
+            font-size: 18px;
+            margin: 5px;
             cursor: pointer;
+            border-radius: 5px;
         }
         .download-btn {
-            background-color: darkblue;
+            background-color: blue;
             color: white;
         }
     </style>
@@ -40,8 +48,9 @@
     <h1>Description Manager</h1>
     <p class="manager-desc">This is the manager description in blue.</p>
     <img src="https://via.placeholder.com/700" alt="Sample Image" width="700" height="700">
-    <br>
-    <a href="https://google.com" class="button">Visit Google</a>
-    <a href="#" class="button download-btn">Download</a>
+    <div>
+        <a href="https://google.com" class="button">Visit Google</a>
+        <a href="#" class="button download-btn">Download</a>
+    </div>
 </body>
 </html>
