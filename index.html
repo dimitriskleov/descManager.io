@@ -37,9 +37,13 @@
             color: #fff;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
             position: absolute;
-            top: -40px; /* Positioned above the image */
+            top: 0; /* Positioned at the top of the container */
             left: 50%;
             transform: translateX(-50%);
+            width: 100%; /* Full width of the container */
+            padding: 10px 0; /* Vertical padding */
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+            box-sizing: border-box; /* Include padding in the element's total width and height */
             margin: 0;
         }
 
@@ -47,9 +51,10 @@
             color: #87CEFA; /* LightSkyBlue */
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
             position: absolute;
-            top: 20px; /* Positioned below the title */
+            top: 40px; /* Positioned below the title */
             left: 50%;
             transform: translateX(-50%);
+            width: 100%; /* Full width of the container */
             margin: 0;
         }
 
@@ -64,9 +69,9 @@
             text-decoration: none;
             box-shadow: 0 0 12px rgba(135, 206, 250, 0.6); /* Light neon blue glow */
             position: absolute;
-            bottom: -50px; /* Positioned below the image */
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 20px; /* Positioned near the bottom of the image */
+            right: 20px; /* Positioned further to the right */
+            transform: translateX(0);
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -78,9 +83,9 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://cdn.discordapp.com/attachments/1187112420951461930/1280233385360494602/Screenshot_2024-09-02_212928.png?ex=66d755c0&is=66d60440&hm=ed6a55440258776493388d9af32ace648974f2852bfa5a5168467e0a14c193e5&" alt="Sample Image" class="image">
         <h1 class="title">Desc</h1>
         <h2 class="manager-title">Manager</h2>
+        <img src="https://cdn.discordapp.com/attachments/1187112420951461930/1280233385360494602/Screenshot_2024-09-02_212928.png?ex=66d755c0&is=66d60440&hm=ed6a55440258776493388d9af32ace648974f2852bfa5a5168467e0a14c193e5&" alt="Sample Image" class="image">
         <a href="https://example.com" class="button">Download</a>
     </div>
 </body>
