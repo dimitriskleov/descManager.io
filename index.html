@@ -12,57 +12,22 @@
             color: #fff;
             font-family: 'Arial', sans-serif;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
             overflow: hidden; /* Prevents scrollbars from appearing */
-        }
-
-        .title {
-            font-size: 3rem;
-            color: #fff;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
-        }
-
-        .manager-title {
-            color: #87CEFA; /* LightSkyBlue */
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-            position: absolute;
-            top: 80px; /* Adjusted to be closer to the title */
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
-        }
-
-        .button {
-            background-color: #87CEFA; /* LightSkyBlue */
-            color: #000;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            border-radius: 8px;
-            text-decoration: none;
-            box-shadow: 0 0 12px rgba(135, 206, 250, 0.6); /* Light neon blue glow */
-            position: absolute;
-            top: 50%;
-            right: 20px; /* 20px from the right edge of the viewport */
-            transform: translateY(-50%);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #00BFFF; /* DeepSkyBlue */
-            box-shadow: 0 0 18px rgba(0, 191, 255, 0.8); /* Brighter glow on hover */
         }
 
         .image-container {
             position: relative;
-            width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height */
+            width: 800px; /* Fixed width */
+            height: 600px; /* Fixed height */
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .image {
@@ -85,6 +50,38 @@
             justify-content: center;
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .title {
+            font-size: 2rem; /* Adjusted for better fit */
+            color: #fff;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            margin: 0;
+        }
+
+        .manager-title {
+            color: #87CEFA; /* LightSkyBlue */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            margin: 0;
+        }
+
+        .button {
+            background-color: #87CEFA; /* LightSkyBlue */
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 0 12px rgba(135, 206, 250, 0.6); /* Light neon blue glow */
+            margin-top: 20px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #00BFFF; /* DeepSkyBlue */
+            box-shadow: 0 0 18px rgba(0, 191, 255, 0.8); /* Brighter glow on hover */
         }
     </style>
 </head>
