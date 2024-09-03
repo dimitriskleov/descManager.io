@@ -67,9 +67,9 @@
 
         // List of .desc files with their names
         const files = [
-            'game1.desc',
+            'game1{v}.desc',
             'game2.desc',
-            'game3.desc'
+            'game3{v}.desc'
             // Add more files as needed
         ];
 
@@ -79,11 +79,15 @@
             fileContainer.innerHTML = '';
 
             fileList.forEach(fileName => {
+                // Remove the file extension
+                const nameWithoutExt = fileName.replace('.desc', '');
+                // Replace {v} with verification icon
+                const displayName = nameWithoutExt.replace(/\{v\}/g, '<span class="verified-icon">&#x2714;</span>');
+
                 const fileItem = document.createElement('div');
                 fileItem.className = 'file-item';
                 fileItem.innerHTML = `
-                    <span>${fileName}</span>
-                    <span class="verified-icon">&#x2714;</span>
+                    <span>${displayName}</span>
                     <a href="${baseUrl + fileName}" download>Download</a>
                 `;
                 fileContainer.appendChild(fileItem);
