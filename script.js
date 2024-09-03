@@ -15,25 +15,38 @@ document.getElementById('fetchFiles').addEventListener('click', async () => {
     }
 });
 
+document.getElementById('searchBar').addEventListener('input', filterFiles);
+
+let allFiles = [];
+
 function extractOwnerRepo(url) {
     const match = url.match(/github\.com\/([^\/]+)\/([^\/]+)/);
     return match ? [match[1], match[2]] : [null, null];
 }
 
 function displayFiles(files) {
+    allFiles = files.filter(file => file.name.endsWith('.desc'));
+    renderFiles(allFiles);
+}
+
+function renderFiles(files) {
     const fileList = document.getElementById('fileList');
     fileList.innerHTML = '';
     files.forEach(file => {
-        if (file.name.endsWith('.desc')) {
-            const fileItem = document.createElement('div');
-            fileItem.className = 'file-item';
-            fileItem.innerHTML = `
-                <span>${file.name}</span>
-                <button onclick="downloadFile('${file.download_url}', '${file.name}')">Download</button>
-            `;
-            fileList.appendChild(fileItem);
-        }
+        const fileItem = document.createElement('div');
+        fileItem.className = 'file-item';
+        fileItem.innerHTML = `
+            <span>${file.name}</span>
+            <button onclick="downloadFile('${file.download_url}', '${file.name}')">Download</button>
+        `;
+        fileList.appendChild(fileItem);
     });
+}
+
+function filterFiles() {
+    const query = document.getElementById('searchBar').value.toLowerCase();
+    const filteredFiles = allFiles.filter(file => file.name.toLowerCase().includes(query));
+    renderFiles(filteredFiles);
 }
 
 function downloadFile(url, name) {
