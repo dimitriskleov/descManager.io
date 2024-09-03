@@ -4,16 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub File Explorer</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .file-item {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .file-item a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .file-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>GitHub File Explorer</h1>
-        <input type="text" id="repoUrl" placeholder="Enter GitHub Repo URL" />
-        <button id="fetchFiles">Fetch Files</button>
-        <input type="text" id="searchBar" placeholder="Search files..." />
-        <div id="fileList"></div>
+        <div class="file-list">
+            <!-- List your .desc files here -->
+            <div class="file-item">
+                <span>example1.desc</span>
+                <a href="https://github.com/owner/repo/raw/main/path/to/example1.desc" download>Download</a>
+            </div>
+            <div class="file-item">
+                <span>example2.desc</span>
+                <a href="https://github.com/owner/repo/raw/main/path/to/example2.desc" download>Download</a>
+            </div>
+            <!-- Add more file items as needed -->
+        </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
