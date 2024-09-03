@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub .desc Files</title>
+    <title> .desc Manager</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,6 +44,30 @@
         .file-item a:hover {
             text-decoration: underline;
         }
+        .verification-mark {
+            width: 16px;
+            height: 16px;
+            background-color: #28a745;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 8px;
+            position: relative;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
         input {
             width: calc(100% - 22px);
             padding: 10px;
@@ -58,33 +82,15 @@
         <div id="fileList">
             <!-- Manually list your .desc files here -->
             <div class="file-item">
-                <span>game1.desc</span>
+                <span>game1 <span class="verification-mark"></span></span>
                 <a href="https://github.com/dimitriskleov/games/raw/main/game1.desc" download>Download</a>
             </div>
             <div class="file-item">
-                <span>game2.desc</span>
+                <span>game2</span>
                 <a href="https://github.com/dimitriskleov/games/raw/main/game2.desc" download>Download</a>
             </div>
             <div class="file-item">
-                <span>game3.desc</span>
+                <span>game3 <span class="verification-mark"></span></span>
                 <a href="https://github.com/dimitriskleov/games/raw/main/game3.desc" download>Download</a>
             </div>
             <!-- Add more files as needed -->
-        </div>
-    </div>
-    <script>
-        function filterFiles() {
-            const query = document.getElementById('searchBar').value.toLowerCase();
-            const fileItems = document.querySelectorAll('.file-item');
-            fileItems.forEach(item => {
-                const fileName = item.querySelector('span').textContent.toLowerCase();
-                if (fileName.includes(query)) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-    </script>
-</body>
-</html>
