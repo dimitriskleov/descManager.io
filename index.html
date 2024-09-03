@@ -62,16 +62,24 @@
         <div id="fileList"></div>
     </div>
     <script>
-        // Base URL for the GitHub raw content
         const baseUrl = 'https://github.com/dimitriskleov/games/raw/main/';
+        const apiUrl = 'https://api.github.com/repos/dimitriskleov/games/contents/';
 
-        // Simulated list of .desc files
-        const files = [
-            'game1{v}.desc',
-            'game2.desc',
-            'game3{v}.desc'
-            // Add more files if necessary
-        ];
+        // Fetch files from GitHub API
+        async function fetchFiles() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('Failed to fetch files');
+                const data = await response.json();
+                const files = data
+                    .filter(item => item.name.endsWith('.desc'))
+                    .map(item => item.name);
+                renderFiles(files);
+            } catch (error) {
+                console.error('Error fetching files:', error);
+                document.getElementById('fileList').innerText = 'Error fetching files.';
+            }
+        }
 
         // Render the list of files
         function renderFiles(fileList) {
@@ -101,8 +109,8 @@
             renderFiles(filteredFiles);
         }
 
-        // Initial render
-        renderFiles(files);
+        // Fetch files and render them
+        fetchFiles();
     </script>
 </body>
 </html>
