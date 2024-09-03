@@ -65,16 +65,22 @@
         const baseUrl = 'https://github.com/dimitriskleov/games/raw/main/';
         const apiUrl = 'https://api.github.com/repos/dimitriskleov/games/contents/';
 
+        let allFiles = [];
+
         // Fetch files from GitHub API
         async function fetchFiles() {
             try {
                 const response = await fetch(apiUrl);
                 if (!response.ok) throw new Error('Failed to fetch files');
                 const data = await response.json();
-                const files = data
-                    .filter(item => item.name.endsWith('.desc'))
+
+                // Filter out .desc files
+                allFiles = data
+                    .filter(item => item.type === 'file' && item.name.endsWith('.desc'))
                     .map(item => item.name);
-                renderFiles(files);
+
+                // Render the filtered file list
+                renderFiles(allFiles);
             } catch (error) {
                 console.error('Error fetching files:', error);
                 document.getElementById('fileList').innerText = 'Error fetching files.';
@@ -105,7 +111,7 @@
         // Filter files based on search input
         function filterFiles() {
             const query = document.getElementById('searchBar').value.toLowerCase();
-            const filteredFiles = files.filter(file => file.toLowerCase().includes(query));
+            const filteredFiles = allFiles.filter(file => file.toLowerCase().includes(query));
             renderFiles(filteredFiles);
         }
 
