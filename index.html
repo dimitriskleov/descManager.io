@@ -3,81 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desc Manager</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000; /* Black background */
-            color: #fff;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; /* Full viewport height */
-            overflow: hidden;
-        }
-
-        .title {
-            font-size: 2rem;
-            color: #fff;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-            margin: 20px 0; /* Margin for spacing */
-            line-height: 1.2;
-        }
-
-        .title .manager-title {
-            color: #87CEFA; /* LightSkyBlue */
-            font-size: 1.5rem; /* Slightly smaller size for the manager title */
-            margin: 5px 0 0 0; /* Top margin to separate from "Desc" */
-        }
-
-        .container {
-            position: relative;
-            width: 500px; /* Fixed width for the image */
-            height: 400px; /* Fixed height for the image */
-            margin: 20px 0; /* Margin to separate from the title */
-        }
-
-        .image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures the image covers the container */
-            border: 5px solid #fff; /* White border around the image */
-        }
-
-        .button {
-            background-color: #87CEFA; /* LightSkyBlue */
-            color: #000;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            border-radius: 8px;
-            text-decoration: none;
-            box-shadow: 0 0 12px rgba(135, 206, 250, 0.6); /* Light neon blue glow */
-            margin-top: 20px; /* Margin to separate from the image */
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #00BFFF; /* DeepSkyBlue */
-            box-shadow: 0 0 18px rgba(0, 191, 255, 0.8); /* Brighter glow on hover */
-        }
-    </style>
+    <title>GitHub File Downloader</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
-        <h1 class="title">
-            Desc
-            <span class="manager-title">Manager</span>
-        </h1>
-        <div class="container">
-            <img src="https://cdn.discordapp.com/attachments/1187112420951461930/1280233385360494602/Screenshot_2024-09-02_212928.png?ex=66d755c0&is=66d60440&hm=ed6a55440258776493388d9af32ace648974f2852bfa5a5168467e0a14c193e5&" alt="Sample Image" class="image">
-        </div>
-        <a href="https://mega.nz/file/ovMQwIyJ#xvau9FcbUqrQMEsg70SsxgiZAMPZIZ_QChg5hfmzK_Y" class="button">Download</a>
+    <div class="container">
+        <h1>GitHub File Downloader</h1>
+        <input type="text" id="repoUrl" placeholder="Enter GitHub Repo URL" />
+        <button id="fetchFiles">Fetch Files</button>
+        <div id="fileList"></div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
