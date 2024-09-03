@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub File Explorer</title>
+    <title>GitHub .desc Files</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,11 +21,31 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             width: 80%;
-            max-width: 600px;
+            max-width: 800px;
         }
         h1 {
             text-align: center;
             margin-bottom: 20px;
+        }
+        input {
+            width: calc(100% - 120px);
+            padding: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .file-list {
+            margin-top: 20px;
         }
         .file-item {
             padding: 10px;
@@ -48,18 +68,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>GitHub File Explorer</h1>
+        <h1>GitHub .desc Files</h1>
+        <input type="text" id="searchBar" placeholder="Search files..." />
         <div class="file-list">
-            <!-- List your .desc files here -->
+            <!-- Manually add your .desc files here -->
             <div class="file-item">
-                <span>example1.desc</span>
-                <a href="https://github.com/owner/repo/raw/main/path/to/example1.desc" download>Download</a>
+                <span>game1.desc (2024-08-31)</span>
+                <a href="https://github.com/dimitriskleov/games/raw/main/game1.desc" download>Download</a>
             </div>
             <div class="file-item">
-                <span>example2.desc</span>
-                <a href="https://github.com/owner/repo/raw/main/path/to/example2.desc" download>Download</a>
+                <span>game2.desc (2024-08-30)</span>
+                <a href="https://github.com/dimitriskleov/games/raw/main/game2.desc" download>Download</a>
             </div>
-            <!-- Add more file items as needed -->
+            <div class="file-item">
+                <span>game3.desc (2024-08-29)</span>
+                <a href="https://github.com/dimitriskleov/games/raw/main/game3.desc" download>Download</a>
+            </div>
+            <!-- Continue listing files with their respective dates -->
         </div>
     </div>
 </body>
