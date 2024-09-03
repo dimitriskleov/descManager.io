@@ -24,9 +24,10 @@ h1 {
 }
 
 input {
-    width: calc(100% - 80px);
+    width: calc(100% - 120px);
     padding: 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 button {
@@ -51,18 +52,3 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 10px;
-    background: #f9f9f9;
-}
-
-.file-item button {
-    padding: 5px 10px;
-    background-color: #28a745;
-    border: none;
-    color: #fff;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.file-item button:hover {
-    background-color: #218838;
-}
