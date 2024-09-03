@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const repoUrl = 'https://api.github.com/repos/dimitriskleov/games/contents';
+    const repoUrl = 'https://api.github.com/repos/dimitriskleov/games/contents'; // Adjust this URL if needed
     fetchFiles(repoUrl);
 
     document.getElementById('searchBar').addEventListener('input', filterFiles);
@@ -11,9 +11,14 @@ async function fetchFiles(url) {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        // Filter for .desc files
-        allFiles = data.filter(file => file.name.endsWith('.desc'));
-        renderFiles(allFiles);
+
+        // Check if the data is an array and if it contains the files
+        if (Array.isArray(data)) {
+            allFiles = data.filter(file => file.type === 'file' && file.name.endsWith('.desc'));
+            renderFiles(allFiles);
+        } else {
+            console.error('Unexpected data format:', data);
+        }
     } catch (error) {
         console.error('Error fetching files:', error);
         alert('Failed to fetch files. Please check the console for details.');
